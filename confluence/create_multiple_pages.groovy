@@ -11,9 +11,9 @@
  */
 
 // Define global variables
-def spaceKey = "schenker"
-def parentPage = "2785297"
-def templateKey = "template"
+def spaceKey = "YourSpaceName"
+def parentPage = "ParentPageID"
+def templateKey = "YourTemplateName"
 
 /*
  * Create a new page.
@@ -66,25 +66,14 @@ void createPages(String spaceKey, String parentKey, List subPages, String templa
 
 // Build page hierarchy
 def subPages = [
-    [pageName: "Data Visualisation - JS"],
+    [pageName: "Sub Page 1"],
     [
-        pageName: "Data Visualisation - Python",
+        pageName: "Sub Page 2, with Children",
         subPages: [
-            [pageName: "Data Visualisation - Dash"]
+            [pageName: "Sub sub page 2"]
         ]
     ],
-    [pageName: "Data Visualisation - QlikView"],
-    [pageName: "Data Visualisation - Tableau"],
-    [
-        pageName: "Data Visualisation - PowerBI",
-        subPages: [
-            [pageName: "PowerBI - Enterprise Gateway - AWS-Hosted Databases"],
-            [pageName: "PowerBI - Enterprise Gateway - Azure PostgreSQL Databases"],
-            [pageName: "PowerBI - Dataflows"],
-            [pageName: "PowerBI - Create and Publish Dashboards - Azure PostgreSQL DB"],
-        ]
-    ],
-    [pageName: "Data Visualisation - Superset"],
+    [pageName: "Sub page 3"],
 ]
 
 // Execute
