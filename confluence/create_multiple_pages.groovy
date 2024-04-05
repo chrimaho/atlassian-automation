@@ -3,12 +3,17 @@
  * 
  * Inspired by: https://library.adaptavist.com/entity/project-creator-for-confluence
  * But with less reliance on the Atlassian classes and more pure Java/Groovy scripting.
+ * 
+ * To use this code, install ScriptRunner in your Confluence Space: https://www.scriptrunnerhq.com/atlassian-apps/confluence/scriptrunner-for-confluence
+ * Then, in the 'Script Console' page, copy+paste this script.
+ * Then adapt the page hierarchy structure to fit your needs.
+ * Then execute.
  */
 
 // Define global variables
-def spaceKey = "YourSpaceName"
-def parentPage = "ParentPageID"
-def templateKey = "YourTemplateName"
+def spaceKey = "schenker"
+def parentPage = "2785297"
+def templateKey = "template"
 
 /*
  * Create a new page.
@@ -61,14 +66,25 @@ void createPages(String spaceKey, String parentKey, List subPages, String templa
 
 // Build page hierarchy
 def subPages = [
-    [pageName: "Sub Page 1"],
+    [pageName: "Data Visualisation - JS"],
     [
-        pageName: "Sub Page 2, with Children",
+        pageName: "Data Visualisation - Python",
         subPages: [
-            [pageName: "Sub sub page 2"]
+            [pageName: "Data Visualisation - Dash"]
         ]
     ],
-    [pageName: "Sub page 3"],
+    [pageName: "Data Visualisation - QlikView"],
+    [pageName: "Data Visualisation - Tableau"],
+    [
+        pageName: "Data Visualisation - PowerBI",
+        subPages: [
+            [pageName: "PowerBI - Enterprise Gateway - AWS-Hosted Databases"],
+            [pageName: "PowerBI - Enterprise Gateway - Azure PostgreSQL Databases"],
+            [pageName: "PowerBI - Dataflows"],
+            [pageName: "PowerBI - Create and Publish Dashboards - Azure PostgreSQL DB"],
+        ]
+    ],
+    [pageName: "Data Visualisation - Superset"],
 ]
 
 // Execute
